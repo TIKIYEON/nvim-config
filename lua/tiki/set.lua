@@ -41,3 +41,4 @@ vim.cmd [[
  highlight specialKey guifg=#928374 gui=nocombine
  highlight NonText guifg=#928374 gui=nocombine
 ]]
+

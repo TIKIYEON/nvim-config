@@ -20,7 +20,14 @@ require("lazy").setup({
     },
 
     -- Gruvbox
-    { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+    -- { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+    -- {'wittyjudge/gruvbox-material.nvim'},
+    -- Senbones
+    { 'mcchrish/zenbones.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+    config = function()
+        vim.cmd('colorscheme zenbones')
+    end },
 
     -- Treesitter
     {
@@ -189,7 +196,7 @@ require("lazy").setup({
     { "MunifTanjim/nui.nvim", lazy = true },
 
     -- indent guides
-    { "lukas-reineke/indent-blankline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     -- Copilot
     { 'github/copilot.vim' },
@@ -202,5 +209,10 @@ require("lazy").setup({
     },
 
     -- Commenter
-    { 'echasnovski/mini.comment', version = '*' },
+    {
+        'echasnovski/mini.comment', version = false,
+        config = function()
+            require('mini.comment').setup()
+        end,
+    },
 })
